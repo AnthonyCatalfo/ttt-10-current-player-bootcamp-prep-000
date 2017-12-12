@@ -1,7 +1,7 @@
 def turn_count(board)
-    board.reject { |item| item.nil? || item == '' || item==" " }
-    return board.length
+    shrunkArray=board - [""," ", nil]
+    return shrunkArray.length
 end
 def current_player(board)
-  return turn_count(board) % 2===0 ? 'O' : 'X'
+  return (turn_count(board) % 2) != 0 ? 'O' : 'X'
 end
